@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Documentation</h1>
+  
+  <div class="docs-grid">
+    <% docs.forEach(doc => { %>
+      <div class="doc-card">
+        <h2><a href="<%= doc.url %>"><%= doc.title %></a></h2>
+        <% if (doc.description) { %>
+          <p><%= doc.description %></p>
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
+  
+  <% if (docs.length === 0) { %>
+    <div class="empty-state">
+      <p>No documentation files found. Add markdown files to the <code>docs</code> directory to get started.</p>
+    </div>
+  <% } %>
+</div>

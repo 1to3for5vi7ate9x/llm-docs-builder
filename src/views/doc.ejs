@@ -1,0 +1,14 @@
+<div class="container">
+  <article class="doc-content">
+    <%- content %>
+  </article>
+  
+  <div class="doc-meta">
+    <% if (metadata.author) { %>
+      <p>Author: <%= metadata.author %></p>
+    <% } %>
+    <% if (metadata.date) { %>
+      <p>Last updated: <%= new Date(metadata.date).toLocaleDateString() %></p>
+    <% } %>
+  </div>
+</div>
