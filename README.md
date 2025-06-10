@@ -2,6 +2,68 @@
 
 A documentation framework that automatically serves HTML to humans and markdown to LLMs/bots. Perfect for creating documentation that's both human-readable and LLM-friendly without maintaining separate versions.
 
+## 🚀 How to Use This for Your Own Docs
+
+### Option 1: Deploy Your Own Instance (Recommended)
+
+1. **Fork or Use as Template**
+   - Click "Use this template" on GitHub to create your own repository
+   - Or fork this repository
+
+2. **Add Your Documentation**
+   ```bash
+   # Clone your new repo
+   git clone https://github.com/YOUR-USERNAME/YOUR-DOCS.git
+   cd YOUR-DOCS
+   
+   # Remove example docs
+   rm -rf docs/*
+   
+   # Add your own markdown files to docs/
+   # Example: docs/introduction.md, docs/api-guide.md, etc.
+   ```
+
+3. **Deploy to Vercel (Free)**
+   - Push your changes to GitHub
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Import your repository
+   - Click Deploy - that's it!
+
+4. **Your docs are now live!**
+   - Browsers see: `https://your-docs.vercel.app/introduction` (HTML)
+   - LLMs/CLI get: `curl https://your-docs.vercel.app/introduction` (Markdown)
+
+### Option 2: Run Locally
+
+```bash
+# Clone and setup
+git clone https://github.com/your-username/llm-docs-builder.git
+cd llm-docs-builder
+
+# Add your docs to /docs folder
+# Install and run
+npm install
+npm run dev
+
+# Visit http://localhost:3000
+```
+
+### Writing Documentation
+
+Just create `.md` files in the `/docs` folder:
+
+```markdown
+---
+title: Your Page Title
+description: Brief description
+order: 1  # Controls navigation order
+---
+
+# Your Content Here
+
+Write in markdown as usual...
+```
+
 ## Quick Start
 
 ```bash

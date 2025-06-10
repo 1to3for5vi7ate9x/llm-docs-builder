@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const path = require('path');
 const fs = require('fs').promises;
 const { marked } = require('marked');
@@ -8,6 +9,17 @@ const markdownRouter = require('./routes/markdown');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Site configuration from environment
+const siteConfig = {
+  title: process.env.SITE_TITLE || 'LLM Docs Builder',
+  description: process.env.SITE_DESCRIPTION || 'Documentation that serves HTML to humans and markdown to LLMs',
+  author: process.env.SITE_AUTHOR || '',
+  url: process.env.SITE_URL || `http://localhost:${PORT}`
+};
+
+// Make site config available to all views
+app.locals.siteConfig = siteConfig;
 
 // Middleware
 app.use(express.static(path.join(__dirname, '../public')));

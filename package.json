@@ -5,7 +5,9 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "build": "echo 'No build step required'",
+    "vercel-build": "echo 'No build step required'"
   },
   "keywords": ["documentation", "markdown", "llm", "docs"],
   "author": "",
@@ -15,9 +17,13 @@
     "marked": "^9.1.0",
     "gray-matter": "^4.0.3",
     "chokidar": "^3.5.3",
-    "ejs": "^3.1.9"
+    "ejs": "^3.1.9",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.x"
   }
 }
